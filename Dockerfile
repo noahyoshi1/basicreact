@@ -1,13 +1,16 @@
+#type of base image
 FROM node:14-alpine
-
+#SETS THE WORKING DIRECTORY
 WORKDIR /app
-
+#COPIES PACKAGE JSON AND PACKAGE-LOCK JSON
 COPY package*.json ./
-
+#INSTALL DEPENDENCIES
 RUN npm install
-
+#SIMPLIFY THE DEPENDENCIES TREE
+RUN npm dedupe
+#COPY THE APP SOURCE CODE
 COPY . .
-
+#BUILDS THE APPLICATION
 RUN npm run build
-
+#STARTS THE APPLICATION
 CMD ["npm", "run", "start"]
