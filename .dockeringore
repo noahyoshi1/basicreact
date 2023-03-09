@@ -1,7 +1,7 @@
 # all files that are not required
 Dockerfile
 .dockeringore
-
+.gitignore
 
 #artifacts that will be built in image creation
 node_modules
