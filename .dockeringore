@@ -1,0 +1,7 @@
+# all files that are not required
+Dockerfile
+.dockeringore
+.gitingore
+
+#artifacts that will be built in image creation
+node_modules
