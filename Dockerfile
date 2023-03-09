@@ -1,6 +1,6 @@
-FROM node:current-alpine
+FROM node:18 as installer
 WORKDIR /app
-LABEL demo.opencontainers.image.source https://github.com/noahyoshi1/basicreact
+
 COPY package*.json ./
 RUN npm install
 
